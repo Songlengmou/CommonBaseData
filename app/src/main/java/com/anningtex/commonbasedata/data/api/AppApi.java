@@ -35,7 +35,7 @@ public interface AppApi {
      * OneFragment
      */
     @FormUrlEncoded
-    @POST("api/v1/getUnfinishedDelivernoList")
+    @POST("api/v1/getWarehouseDelivernoWithOrderList2")
     Observable<BaseResponse<List<RecentBean>>> getOneFrag(@Field("supplier_delivery_no") String date);
 
     /**

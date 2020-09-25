@@ -11,6 +11,7 @@ import com.anningtex.commonbasedata.data.api.AppConstants;
 import com.anningtex.commonbasedata.data.base.BaseActivity;
 import com.anningtex.commonbasedata.data.manger.AppManager;
 import com.anningtex.commonbasedata.ui.fragment.OneFragment;
+import com.anningtex.commonbasedata.ui.fragment.ThreeFragment;
 import com.anningtex.commonbasedata.ui.fragment.TwoFragment;
 import com.anningtex.commonbasedata.weight.pager.CustomViewPager;
 import com.anningtex.commonbasedata.weight.pager.TabPagerAdapter;
@@ -56,16 +57,17 @@ public class MainActivity extends BaseActivity {
     protected void initViews(Bundle savedInstanceState) {
         initOkGo();
 
-        // BottomNavigationView 2个以上图标不显示文字解决方法
+        // BottomNavigationView 3个以上图标不显示文字解决方法
         mMainBottomNav.setLabelVisibilityMode(LABEL_VISIBILITY_LABELED);
         fragmentList.add(new OneFragment());
         fragmentList.add(new TwoFragment());
+        fragmentList.add(new ThreeFragment());
         setupBottomNavigationView();
         TabPagerAdapter pagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), mTitleList, fragmentList);
         mainFragmentContainer.setAdapter(pagerAdapter);
         //设置默认选中页
         mainFragmentContainer.setCurrentItem(0);
-        mainFragmentContainer.setOffscreenPageLimit(2);
+        mainFragmentContainer.setOffscreenPageLimit(3);
     }
 
     private void initOkGo() {
@@ -115,6 +117,9 @@ public class MainActivity extends BaseActivity {
                     break;
                 case R.id.two:
                     mainFragmentContainer.setCurrentItem(1);
+                    break;
+                case R.id.three:
+                    mainFragmentContainer.setCurrentItem(2);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + item.getItemId());

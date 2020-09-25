@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Build;
 import android.os.StrictMode;
 
+import androidx.multidex.MultiDex;
+
 import com.lzy.okgo.OkGo;
 
 /**
@@ -27,6 +29,8 @@ public class MainApplication extends Application {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
             builder.detectFileUriExposure();
         }
+        //MultiDex
+        MultiDex.install(this);
     }
 
     public static Context getContext() {

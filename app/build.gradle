@@ -12,6 +12,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -54,4 +55,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0-alpha02'
     //BaseRecycleViewAdapterHelper
     implementation 'com.github.Songlengmou:BaseRecycleViewAdapterHelper:1.1.0'
+    //Model: TwoNetworkFramework
+    implementation project(path: ':TwoNetworkFramework')
+    //AsyncHttp
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'cz.msebera.android:httpclient:4.3.6'
+    //MultiDex
+    implementation 'com.android.support:multidex:1.0.3'
 }

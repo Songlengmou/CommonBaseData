@@ -1,2 +1,3 @@
+include ':TwoNetworkFramework'
 include ':app'
 rootProject.name = "CommonBaseData"

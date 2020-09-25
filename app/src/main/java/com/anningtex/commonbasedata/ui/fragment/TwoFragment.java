@@ -20,6 +20,8 @@ public class TwoFragment extends BaseFragment {
     @BindView(R.id.tv_read)
     TextView tvRead;
 
+    private String url = AppConstants.Base_Url_Test + "api/v1/getWarehouseDelivernoWithOrderList2";
+
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_two;
@@ -27,9 +29,9 @@ public class TwoFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        OkGo.<String>post(AppConstants.Base_Url_Test + "api/v1/getUnfinishedDelivernoList")
+        OkGo.<String>post(url)
                 .headers("Cookie", AppConstants.COOKIE)
-                .params("supplier_delivery_no", "YD-AN2009")
+                .params("supplier_delivery_no", "YD-AN2006")
                 .execute(new StringCallback() {
                     @Override
                     public void onStart(Request<String, ? extends Request> request) {

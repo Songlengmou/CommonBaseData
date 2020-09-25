@@ -28,6 +28,7 @@ public class OneFragment extends BaseFragment {
     RecyclerView rvRecent;
 
     private BaseRecycleAdapter recycleAdapter;
+    private String date = "YD-AN2006";
 
     @Override
     protected int getLayoutResource() {
@@ -36,7 +37,6 @@ public class OneFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        String date = "YD-AN2009";
         addDispose(RxNet.request(ApiManager.getInstance().getOneFrag(date), new RxNetCallBack<List<RecentBean>>() {
             @Override
             public void onStart() {
