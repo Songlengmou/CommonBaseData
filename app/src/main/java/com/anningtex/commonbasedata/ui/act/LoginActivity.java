@@ -1,6 +1,7 @@
 package com.anningtex.commonbasedata.ui.act;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.EditText;
 
 import com.anningtex.commonbasedata.R;
@@ -10,6 +11,7 @@ import com.anningtex.commonbasedata.entity.LoginBean;
 import com.anningtex.commonbasedata.ui.act.contract.LoginContract;
 import com.anningtex.commonbasedata.ui.act.presenter.LoginPresenter;
 import com.anningtex.commonbasedata.utils.MD5Util;
+import com.anningtex.commonbasedata.utils.NetworkUtil;
 
 
 import butterknife.BindView;
@@ -25,6 +27,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     EditText loginEditPassword;
 
     private LoginPresenter loginPresenter;
+    private String name, pwd;
 
     @Override
     protected int getLayoutResource() {
@@ -34,6 +37,16 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     @Override
     protected void initViews(Bundle savedInstanceState) {
         loginPresenter = new LoginPresenter(LoginActivity.this, this);
+        name = loginEditUsername.getText().toString().trim();
+        pwd = MD5Util.md5(loginEditPassword.getText().toString().trim());
+        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(pwd)) {
+            if (NetworkUtil.isNetworkConnected(LoginActivity.this)) {
+                loginPresenter.login();
+            } else {
+                hideLoading();
+                showToast("当前网络不可用");
+            }
+        }
     }
 
     @OnClick(R.id.btn_login)
@@ -47,12 +60,12 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     @Override
     public String getName() {
-        return loginEditUsername.getText().toString().trim();
+        return name;
     }
 
     @Override
     public String getPwd() {
-        return MD5Util.md5(loginEditPassword.getText().toString().trim());
+        return pwd;
     }
 
     @Override

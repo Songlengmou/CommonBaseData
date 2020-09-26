@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".test.four.TestFourActivity">
+
+    <com.anningtex.commonbasedata.weight.actionbar.TitleBar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Test Four" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:padding="@dimen/dp_5"
+            android:text="当前: "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/et_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edit_text_selector"
+            android:focusable="false"
+            android:hint="date"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:padding="@dimen/dp_5"
+            android:text="去年同期: "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/et_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edit_text_selector"
+            android:focusable="false"
+            android:hint="date"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:padding="@dimen/dp_5"
+            android:text="Test: "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/et_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edit_text_selector"
+            android:focusable="false"
+            android:hint="date"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="@dimen/dp_5"
+        android:text="下方是单击选择,长按删除重置: "
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_14" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="年"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="0.2dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_mouth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="月"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="0.2dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="日"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/black" />
+</LinearLayout>

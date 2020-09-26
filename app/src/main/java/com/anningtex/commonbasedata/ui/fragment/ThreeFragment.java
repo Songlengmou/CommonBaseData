@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.base.BaseFragment;
+import com.anningtex.commonbasedata.test.four.TestFourActivity;
 import com.anningtex.commonbasedata.test.one.TestOneActivity;
 import com.anningtex.commonbasedata.test.three.TestThreeActivity;
 import com.anningtex.commonbasedata.test.two.TestTwoActivity;
@@ -25,7 +26,7 @@ public class ThreeFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_one, R.id.btn_two, R.id.btn_three})
+    @OnClick({R.id.btn_one, R.id.btn_two, R.id.btn_three, R.id.btn_four})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_one:
@@ -36,6 +37,9 @@ public class ThreeFragment extends BaseFragment {
                 break;
             case R.id.btn_three:
                 $startActivity(TestThreeActivity.class);
+                break;
+            case R.id.btn_four:
+                $startActivity(TestFourActivity.class);
                 break;
             default:
                 break;

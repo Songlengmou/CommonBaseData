@@ -18,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".test.four.TestFourActivity"/>
         <activity android:name=".test.three.TestThreeActivity" />
         <activity android:name=".test.two.TestTwoActivity" />
         <activity android:name=".test.one.TestOneActivity" />
