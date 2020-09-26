@@ -64,4 +64,6 @@ dependencies {
     implementation 'cz.msebera.android:httpclient:4.3.6'
     //MultiDex
     implementation 'com.android.support:multidex:1.0.3'
+    //Permission
+    implementation 'com.yanzhenjie:permission:2.0.3'
 }

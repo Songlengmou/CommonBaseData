@@ -3,6 +3,8 @@ package com.anningtex.commonbasedata.data.manger;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.StrictMode;
 
@@ -35,5 +37,21 @@ public class MainApplication extends Application {
 
     public static Context getContext() {
         return context;
+    }
+
+    /**
+     * 获取应用程序名称
+     */
+    public String getApplicationName() {
+        PackageManager packageManager = null;
+        ApplicationInfo applicationInfo;
+        try {
+            packageManager = getApplicationContext().getPackageManager();
+            applicationInfo = packageManager.getApplicationInfo(getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            applicationInfo = null;
+        }
+        String applicationName = (String) packageManager.getApplicationLabel(applicationInfo);
+        return applicationName;
     }
 }

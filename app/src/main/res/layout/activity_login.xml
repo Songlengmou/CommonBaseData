@@ -27,6 +27,7 @@
             android:layout_height="50dp"
             android:layout_margin="30dp"
             android:hint="username"
+            android:text="ywlwj"
             android:textColor="@color/black" />
 
         <EditText

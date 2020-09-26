@@ -47,4 +47,13 @@
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/btn_three" />
 
+    <Button
+        android:id="@+id/btn_five"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:text="7. 动态权限"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/btn_four" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
