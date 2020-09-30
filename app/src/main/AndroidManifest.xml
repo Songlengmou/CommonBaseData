@@ -9,7 +9,6 @@
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
@@ -25,7 +24,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
-        <activity android:name=".test.five.TestFiveActivity"></activity>
+        <activity android:name=".test.six.SixActivity"></activity>
+        <activity android:name=".test.five.TestFiveActivity" />
         <activity
             android:name=".test.four.TestFourActivity"
             android:launchMode="singleTask" />
@@ -48,12 +48,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!--相机-->
+            <!-- 相机 -->
             <intent-filter>
                 <action android:name="android.media.action.IMAGE_CAPTURE" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
     </application>
 
