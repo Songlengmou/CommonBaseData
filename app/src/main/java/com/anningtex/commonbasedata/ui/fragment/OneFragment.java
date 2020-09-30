@@ -14,6 +14,7 @@ import com.anningtex.commonbasedata.data.base.BaseFragment;
 import com.anningtex.commonbasedata.data.rx.RxNet;
 import com.anningtex.commonbasedata.data.rx.RxNetCallBack;
 import com.anningtex.commonbasedata.entity.RecentBean;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.syp.library.BaseRecycleAdapter;
 
 import java.util.List;
@@ -24,8 +25,12 @@ import butterknife.BindView;
  * @Author Song
  */
 public class OneFragment extends BaseFragment {
-    @BindView(R.id.rv_recent)
+    @BindView(R.id.common_recycler)
     RecyclerView rvRecent;
+    @BindView(R.id.common_refresh)
+    SmartRefreshLayout commonRefresh;
+    @BindView(R.id.tv_nothing)
+    TextView tvNothing;
 
     private BaseRecycleAdapter recycleAdapter;
     private String date = "YD-AN2006";
@@ -37,6 +42,18 @@ public class OneFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+        commonRefresh.setEnableLoadMore(true);
+        commonRefresh.finishLoadMoreWithNoMoreData();
+        commonRefresh.setOnRefreshListener(refreshLayout -> {
+            recycleAdapter.getData().clear();
+            getData();
+            recycleAdapter.notifyDataSetChanged();
+        });
+
+        getData();
+    }
+
+    private void getData() {
         addDispose(RxNet.request(ApiManager.getInstance().getOneFrag(date), new RxNetCallBack<List<RecentBean>>() {
             @Override
             public void onStart() {
@@ -46,6 +63,7 @@ public class OneFragment extends BaseFragment {
             @Override
             public void onSuccess(List<RecentBean> data) {
                 hideLoading();
+                commonRefresh.finishRefresh();
                 Log.e("666OneFragment", "onSuccess: " + data.size());
                 recycleAdapter = new BaseRecycleAdapter(R.layout.item_one, data);
                 rvRecent.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -106,6 +124,7 @@ public class OneFragment extends BaseFragment {
 
             @Override
             public void onFailure(String msg) {
+                commonRefresh.finishRefresh();
                 hideLoading();
                 showToast(msg);
                 Log.e("666OneFragment", "onFailure: " + msg);

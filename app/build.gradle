@@ -72,4 +72,8 @@ dependencies {
     //Room
     implementation 'androidx.room:room-runtime:2.2.0-alpha01'
     annotationProcessor 'androidx.room:room-compiler:2.2.0-alpha01'
+    //Refresh
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
 }
