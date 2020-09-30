@@ -2,9 +2,12 @@ package com.anningtex.commonbasedata.entity;
 
 import java.util.List;
 
+import lombok.Data;
+
 /**
  * @Author Song
  */
+@Data
 public class TestOneBean {
 
     /**
@@ -17,22 +20,6 @@ public class TestOneBean {
     private String msg;
     private List<DataBean> data;
 
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
     public List<DataBean> getData() {
         return data;
     }
@@ -41,6 +28,7 @@ public class TestOneBean {
         this.data = data;
     }
 
+    @Data
     public static class DataBean {
         /**
          * id : 175
@@ -61,46 +49,6 @@ public class TestOneBean {
         private List<DeliverListDetailBean> deliver_list_detail;
         private List<String> order_no_list;
         private List<String> supplier_name_list;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getLoad_date() {
-            return load_date;
-        }
-
-        public void setLoad_date(String load_date) {
-            this.load_date = load_date;
-        }
-
-        public String getSupplier_delivery_no() {
-            return supplier_delivery_no;
-        }
-
-        public void setSupplier_delivery_no(String supplier_delivery_no) {
-            this.supplier_delivery_no = supplier_delivery_no;
-        }
-
-        public String getIs_delivery() {
-            return is_delivery;
-        }
-
-        public void setIs_delivery(String is_delivery) {
-            this.is_delivery = is_delivery;
-        }
-
-        public String getIs_deliver_status() {
-            return is_deliver_status;
-        }
-
-        public void setIs_deliver_status(String is_deliver_status) {
-            this.is_deliver_status = is_deliver_status;
-        }
 
         public List<DeliverListDetailBean> getDeliver_list_detail() {
             return deliver_list_detail;
@@ -126,6 +74,7 @@ public class TestOneBean {
             this.supplier_name_list = supplier_name_list;
         }
 
+        @Data
         public static class DeliverListDetailBean {
             /**
              * delivery_id : 175
@@ -158,118 +107,6 @@ public class TestOneBean {
             private String meters_per_bale_unit_name_en;
             private String order_id;
             private int bales_quantity_x;
-
-            public String getDelivery_id() {
-                return delivery_id;
-            }
-
-            public void setDelivery_id(String delivery_id) {
-                this.delivery_id = delivery_id;
-            }
-
-            public String getOrder_no() {
-                return order_no;
-            }
-
-            public void setOrder_no(String order_no) {
-                this.order_no = order_no;
-            }
-
-            public String getSupplier_id() {
-                return supplier_id;
-            }
-
-            public void setSupplier_id(String supplier_id) {
-                this.supplier_id = supplier_id;
-            }
-
-            public int getBales_quantity() {
-                return bales_quantity;
-            }
-
-            public void setBales_quantity(int bales_quantity) {
-                this.bales_quantity = bales_quantity;
-            }
-
-            public int getMeters_per_bale() {
-                return meters_per_bale;
-            }
-
-            public void setMeters_per_bale(int meters_per_bale) {
-                this.meters_per_bale = meters_per_bale;
-            }
-
-            public String getMeters_per_bale_unit_id() {
-                return meters_per_bale_unit_id;
-            }
-
-            public void setMeters_per_bale_unit_id(String meters_per_bale_unit_id) {
-                this.meters_per_bale_unit_id = meters_per_bale_unit_id;
-            }
-
-            public String getNotes() {
-                return notes;
-            }
-
-            public void setNotes(String notes) {
-                this.notes = notes;
-            }
-
-            public String getSupplier_delivery_no() {
-                return supplier_delivery_no;
-            }
-
-            public void setSupplier_delivery_no(String supplier_delivery_no) {
-                this.supplier_delivery_no = supplier_delivery_no;
-            }
-
-            public int getWarehouse_count() {
-                return warehouse_count;
-            }
-
-            public void setWarehouse_count(int warehouse_count) {
-                this.warehouse_count = warehouse_count;
-            }
-
-            public int getChecked() {
-                return checked;
-            }
-
-            public void setChecked(int checked) {
-                this.checked = checked;
-            }
-
-            public String getSupplier_name() {
-                return supplier_name;
-            }
-
-            public void setSupplier_name(String supplier_name) {
-                this.supplier_name = supplier_name;
-            }
-
-            public String getMeters_per_bale_unit_name_en() {
-                return meters_per_bale_unit_name_en;
-            }
-
-            public void setMeters_per_bale_unit_name_en(String meters_per_bale_unit_name_en) {
-                this.meters_per_bale_unit_name_en = meters_per_bale_unit_name_en;
-            }
-
-            public String getOrder_id() {
-                return order_id;
-            }
-
-            public void setOrder_id(String order_id) {
-                this.order_id = order_id;
-            }
-
-            public int getBales_quantity_x() {
-                return bales_quantity_x;
-            }
-
-            public void setBales_quantity_x(int bales_quantity_x) {
-                this.bales_quantity_x = bales_quantity_x;
-            }
         }
     }
 }
