@@ -26,11 +26,13 @@ public class OkHttpUtil {
      */
     public static void sendOkHttpRequest(String address, RequestBody requestBody, Callback callback) {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
-                .addHeader("Cookie", MainApplication.SESSION)
+        Request.Builder builder = new Request.Builder()
                 .url(address)
-                .post(requestBody)
-                .build();
+                .post(requestBody);
+        if (MainApplication.SESSION != null && !MainApplication.SESSION.isEmpty()) {
+            builder.addHeader("Cookie", MainApplication.SESSION);
+        }
+        Request request = builder.build();
         client.newCall(request).enqueue(callback);
     }
 }
