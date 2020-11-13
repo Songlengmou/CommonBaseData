@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.AppConstants;
 import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.anningtex.commonbasedata.entity.TestOneBean;
 import com.anningtex.commonbasedata.weight.actionbar.TitleBar;
 import com.example.twonetworkframework.two.okhttp.ExceptionCode;
@@ -64,7 +65,7 @@ public class TestTwoActivity extends BaseActivity {
     private void getShowData() {
         Map<String, String> map = new HashMap<>();
         map.put("supplier_delivery_no", "YD-AN2006");
-        rxHttp.post("Cookie", AppConstants.COOKIE, url, map, new RxJsonHttpHandler<TestOneBean>(TestOneBean.class) {
+        rxHttp.post("Cookie", MainApplication.COOKIE, url, map, new RxJsonHttpHandler<TestOneBean>(TestOneBean.class) {
             @Override
             public void onStart() {
                 super.onStart();

@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.anningtex.commonbasedata.data.manger.MainApplication;
-import com.anningtex.commonbasedata.data.api.AppConstants;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -26,7 +25,7 @@ public class CookieInterceptor implements Interceptor {
             HashSet<String> cookies = new HashSet<>();
             final List<String> headers = originalResponse.headers("Set-Cookie");
             for (int i = 0; i < headers.size(); i++) {
-                AppConstants.COOKIE += headers.get(i) + " ; ";
+                MainApplication.COOKIE += headers.get(i) + " ; ";
             }
 
             for (String header : originalResponse.headers("Set-Cookie")) {

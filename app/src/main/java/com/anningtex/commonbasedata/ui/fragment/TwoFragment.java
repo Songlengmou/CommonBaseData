@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.AppConstants;
 import com.anningtex.commonbasedata.data.base.BaseFragment;
+import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -30,7 +31,8 @@ public class TwoFragment extends BaseFragment {
     @Override
     protected void initData() {
         OkGo.<String>post(url)
-                .headers("Cookie", AppConstants.COOKIE)
+                //因全局中配置,故这里可以不写
+//                .headers("Cookie", MainApplication.COOKIE)
                 .params("supplier_delivery_no", "YD-AN2006")
                 .execute(new StringCallback() {
                     @Override

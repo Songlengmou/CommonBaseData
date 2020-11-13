@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 
 import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.anningtex.commonbasedata.R;
-import com.anningtex.commonbasedata.data.api.AppConstants;
 import com.anningtex.commonbasedata.data.base.BaseActivity;
 import com.anningtex.commonbasedata.data.manger.AppManager;
 import com.anningtex.commonbasedata.ui.fragment.OneFragment;
@@ -95,7 +94,7 @@ public class MainActivity extends BaseActivity {
         builder.sslSocketFactory(sslParams1.sSLSocketFactory, sslParams1.trustManager);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.put("Cookie", AppConstants.COOKIE);
+        headers.put("Cookie", MainApplication.COOKIE);
         //必须调用初始化
         OkGo.getInstance().init((Application) MainApplication.getContext())
                 //建议设置OkHttpClient，不设置会使用默认的

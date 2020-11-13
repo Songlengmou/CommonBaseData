@@ -3,7 +3,6 @@ package com.anningtex.commonbasedata.data.rx;
 import android.content.Context;
 import android.util.Log;
 
-import com.anningtex.commonbasedata.data.api.AppConstants;
 import com.anningtex.commonbasedata.data.manger.MainApplication;
 
 import java.io.IOException;
@@ -29,8 +28,8 @@ public class AddCookiesInterceptor implements Interceptor {
                 // This is done so I know which headers are being added; this interceptor is used after the normal logging of OkHttp
             }
         }
-        Log.e("OkHttp", "Adding Header: " + AppConstants.COOKIE);
-        builder.addHeader("Cookie", AppConstants.COOKIE);
+        Log.e("OkHttp", "Adding Header: " + MainApplication.COOKIE);
+        builder.addHeader("Cookie", MainApplication.COOKIE);
         return chain.proceed(builder.build());
     }
 }

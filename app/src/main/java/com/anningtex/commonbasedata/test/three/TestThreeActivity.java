@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.AppConstants;
 import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.anningtex.commonbasedata.entity.TestOneBean;
 import com.anningtex.commonbasedata.weight.actionbar.TitleBar;
 import com.google.gson.Gson;
@@ -60,7 +61,7 @@ public class TestThreeActivity extends BaseActivity {
 
     private void getShowData() {
         AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
-        asyncHttpClient.addHeader("Cookie", AppConstants.COOKIE);
+        asyncHttpClient.addHeader("Cookie", MainApplication.COOKIE);
         asyncHttpClient.setTimeout(90000);
         asyncHttpClient.setConnectTimeout(90000);
         asyncHttpClient.setResponseTimeout(90000);

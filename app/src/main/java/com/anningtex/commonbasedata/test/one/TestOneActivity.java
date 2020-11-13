@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.AppConstants;
 import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.anningtex.commonbasedata.entity.TestOneBean;
 import com.anningtex.commonbasedata.weight.actionbar.TitleBar;
 import com.example.twonetworkframework.one.OkHttpUtil;
@@ -70,7 +71,7 @@ public class TestOneActivity extends BaseActivity {
                 .add("supplier_delivery_no", "YD-AN2006")
                 .build();
 
-        OkHttpUtil.sendOkHttpRequest("Cookie", AppConstants.COOKIE, url, requestBody, new Callback() {
+        OkHttpUtil.sendOkHttpRequest("Cookie", MainApplication.COOKIE, url, requestBody, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.e("Fail : ", e.getMessage());

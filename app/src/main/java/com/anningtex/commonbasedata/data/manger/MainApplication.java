@@ -18,6 +18,7 @@ import com.lzy.okgo.OkGo;
 public class MainApplication extends Application {
     @SuppressLint("StaticFieldLeak")
     private static Context context;
+    public static String COOKIE = "";
 
     @Override
     public void onCreate() {
