@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.anningtex.commonbasedata.R;
-import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.base.one.BaseActivity;
 import com.anningtex.commonbasedata.utils.date.DateUtils;
 import com.anningtex.commonbasedata.utils.TransInformation;
 import com.anningtex.commonbasedata.utils.date.ChooseCommonData;

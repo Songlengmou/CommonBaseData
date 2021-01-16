@@ -1,4 +1,4 @@
-package com.anningtex.commonbasedata.data.base;
+package com.anningtex.commonbasedata.data.base.one;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.anningtex.commonbasedata.data.base.BaseView;
 import com.anningtex.commonbasedata.data.manger.AppManager;
 import com.anningtex.commonbasedata.data.rx.RxDisposeManager;
 import com.anningtex.commonbasedata.dialog.LoadingView;
@@ -34,7 +35,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mLoadingView = new LoadingView(this);
         setLanguage();
         closeWebViewDocumentDraw();

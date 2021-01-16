@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.ApiManager;
-import com.anningtex.commonbasedata.data.base.BaseFragment;
+import com.anningtex.commonbasedata.data.base.one.BaseFragment;
 import com.anningtex.commonbasedata.data.rx.RxNet;
 import com.anningtex.commonbasedata.data.rx.RxNetCallBack;
 import com.anningtex.commonbasedata.entity.RecentBean;

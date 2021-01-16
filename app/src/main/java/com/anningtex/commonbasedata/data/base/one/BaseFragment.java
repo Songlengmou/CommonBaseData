@@ -1,4 +1,4 @@
-package com.anningtex.commonbasedata.data.base;
+package com.anningtex.commonbasedata.data.base.one;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.anningtex.commonbasedata.data.base.BaseView;
 import com.anningtex.commonbasedata.data.rx.RxDisposeManager;
 import com.anningtex.commonbasedata.dialog.LoadingView;
 

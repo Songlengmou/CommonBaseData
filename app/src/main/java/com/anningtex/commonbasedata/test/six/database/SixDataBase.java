@@ -12,7 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
  * @Author Song
  */
 
-@Database(entities = {StudentBean.class}, version = 1)
+@Database(entities = {StudentBean.class}, version = 1, exportSchema = false)
 public abstract class SixDataBase extends RoomDatabase {
     private static final String DATABASE_NAME = "zl_lm_db";
 
@@ -22,6 +22,9 @@ public abstract class SixDataBase extends RoomDatabase {
         if (databaseInstance == null) {
             databaseInstance = Room
                     .databaseBuilder(context.getApplicationContext(), SixDataBase.class, DATABASE_NAME)
+                    //不保留原有数据,直接清空
+//                    .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
 //                    .addMigrations(MIGRATION_1_2)
                     .build();
         }
@@ -36,9 +39,10 @@ public abstract class SixDataBase extends RoomDatabase {
     static final Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {
-            //对于数据库中的所有更新都需要写下面的代码
             database.execSQL("ALTER TABLE student "
-                    + " ADD COLUMN last_update INTEGER");
+                    + " ADD COLUMN olid INTEGER NOT NULL DEFAULT 0");
+            database.execSQL("ALTER TABLE student "
+                    + " ADD COLUMN orderNo TEXT");
         }
     };
 }

@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 
 import com.anningtex.commonbasedata.R;
-import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.base.one.BaseActivity;
 import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.anningtex.commonbasedata.weight.actionbar.TitleBar;
 import com.yanzhenjie.permission.AndPermission;

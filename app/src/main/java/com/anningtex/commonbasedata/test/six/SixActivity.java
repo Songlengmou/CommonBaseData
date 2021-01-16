@@ -11,7 +11,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.anningtex.commonbasedata.R;
-import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.base.one.BaseActivity;
 import com.anningtex.commonbasedata.test.six.database.SixDataBase;
 import com.anningtex.commonbasedata.test.six.database.StudentBean;
 import com.anningtex.commonbasedata.utils.ToastUtils;

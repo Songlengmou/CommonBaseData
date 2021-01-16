@@ -24,8 +24,15 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
-        <activity android:name=".test.six.SixActivity"></activity>
-        <activity android:name=".test.five.TestFiveActivity" />
+        <activity
+            android:name=".test.seven.act.SevenActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".test.six.SixActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".test.five.TestFiveActivity"
+            android:launchMode="singleTask" />
         <activity
             android:name=".test.four.TestFourActivity"
             android:launchMode="singleTask" />

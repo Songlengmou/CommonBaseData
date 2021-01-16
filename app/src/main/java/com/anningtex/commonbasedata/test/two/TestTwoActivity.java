@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.AppConstants;
-import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.base.one.BaseActivity;
 import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.anningtex.commonbasedata.entity.TestOneBean;
 import com.anningtex.commonbasedata.weight.actionbar.TitleBar;

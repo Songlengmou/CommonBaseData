@@ -29,7 +29,6 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
         return views.size();
     }
 
-
     @Override
     public CharSequence getPageTitle(int position) {
         return title.get(position);

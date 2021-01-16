@@ -5,8 +5,7 @@ import android.widget.TextView;
 
 import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.AppConstants;
-import com.anningtex.commonbasedata.data.base.BaseFragment;
-import com.anningtex.commonbasedata.data.manger.MainApplication;
+import com.anningtex.commonbasedata.data.base.one.BaseFragment;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;

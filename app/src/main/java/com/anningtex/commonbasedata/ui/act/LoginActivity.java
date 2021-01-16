@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import com.anningtex.commonbasedata.R;
-import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.base.one.BaseActivity;
 import com.anningtex.commonbasedata.data.manger.AppManager;
 import com.anningtex.commonbasedata.entity.LoginBean;
 import com.anningtex.commonbasedata.ui.act.contract.LoginContract;

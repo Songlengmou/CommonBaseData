@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import com.anningtex.commonbasedata.data.manger.MainApplication;
 import com.anningtex.commonbasedata.R;
-import com.anningtex.commonbasedata.data.base.BaseActivity;
+import com.anningtex.commonbasedata.data.base.one.BaseActivity;
 import com.anningtex.commonbasedata.data.manger.AppManager;
 import com.anningtex.commonbasedata.ui.fragment.OneFragment;
 import com.anningtex.commonbasedata.ui.fragment.ThreeFragment;
@@ -126,7 +126,6 @@ public class MainActivity extends BaseActivity {
             return true;
         });
     }
-
 
     @Override
     public void onBackPressed() {
