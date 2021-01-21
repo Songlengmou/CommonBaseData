@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.LocaleList;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -117,7 +118,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     @Override
     public void showToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        new Thread(() -> {
+            Looper.prepare();
+            Toast.makeText(BaseActivity.this, msg, Toast.LENGTH_SHORT).show();
+            Looper.loop();
+        }).start();
     }
 
     /**

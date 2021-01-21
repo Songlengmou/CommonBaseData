@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.LocaleList;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Window;
@@ -182,7 +183,11 @@ public abstract class BaseActivity<T extends ViewBinding> extends AppCompatActiv
 
     @Override
     public void showToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        new Thread(() -> {
+            Looper.prepare();
+            Toast.makeText(BaseActivity.this, msg, Toast.LENGTH_SHORT).show();
+            Looper.loop();
+        }).start();
     }
 
     @Override

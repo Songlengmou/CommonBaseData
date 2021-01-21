@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +78,11 @@ public abstract class BaseFragment extends Fragment implements BaseView {
 
     @Override
     public void showToast(String msg) {
-        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+        new Thread(() -> {
+            Looper.prepare();
+            Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+            Looper.loop();
+        }).start();
     }
 
     public void $startActivity(Class<?> cls) {

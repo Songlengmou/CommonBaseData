@@ -3,6 +3,7 @@ package com.anningtex.commonbasedata.data.base.two;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -108,7 +109,11 @@ public abstract class BaseFragment<T extends ViewBinding> extends Fragment imple
 
     @Override
     public void showToast(String msg) {
-        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+        new Thread(() -> {
+            Looper.prepare();
+            Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+            Looper.loop();
+        }).start();
     }
 
     @Override
