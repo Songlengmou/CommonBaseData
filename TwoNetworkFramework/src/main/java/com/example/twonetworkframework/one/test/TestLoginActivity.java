@@ -37,7 +37,7 @@ public class TestLoginActivity extends AppCompatActivity {
         OkHttpUtil.sendOkHttpRequest(url, requestBody, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.e("Fail : ", e.getMessage());
+//                Log.e("Fail : ", e.toString());
             }
 
             @Override
@@ -46,7 +46,7 @@ public class TestLoginActivity extends AppCompatActivity {
                 if (response.body() != null) {
                     response.body().close();
                 }
-                Log.e("Success : ", result);
+//                Log.e("Success : ", result);
                 MainApplication.SESSION = response.headers().get("Set-Cookie");
                 CookieUtils.syncCookie(url, MainApplication.SESSION, TestLoginActivity.this);
                 Log.e("SESSION : ", MainApplication.SESSION);

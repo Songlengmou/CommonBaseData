@@ -30,7 +30,7 @@ public class TestLoginFragment extends Fragment {
         OkHttpUtil.sendOkHttpRequest(url, requestBody, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.e("Fail : ", e.getMessage());
+//                Log.e("Fail : ", e.toString());
             }
 
             @Override
@@ -39,7 +39,7 @@ public class TestLoginFragment extends Fragment {
                 if (response.body() != null) {
                     response.body().close();
                 }
-                Log.e("Success : ", result);
+//                Log.e("Success : ", result);
                 new Thread(() -> {
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(() -> {

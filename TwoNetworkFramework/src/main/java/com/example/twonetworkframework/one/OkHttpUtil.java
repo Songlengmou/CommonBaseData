@@ -1,6 +1,7 @@
 package com.example.twonetworkframework.one;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -30,7 +31,11 @@ public class OkHttpUtil {
      * 注：一般配置会用这个  直接用MainApplication.SESSION即可
      */
     public static void sendOkHttpRequest(String address, RequestBody requestBody, Callback callback) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .readTimeout(20, TimeUnit.SECONDS)
+                .addInterceptor(new HttpLoggingInterceptor())
+                .build();
         Request.Builder builder = new Request.Builder()
                 .url(address)
                 .post(requestBody);
@@ -47,7 +52,11 @@ public class OkHttpUtil {
     private static Response response;
 
     public static Response sendOkHttpRequestSynchronize(String address, RequestBody requestBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .readTimeout(20, TimeUnit.SECONDS)
+                .addInterceptor(new HttpLoggingInterceptor())
+                .build();
         Request.Builder builder = new Request.Builder()
                 .url(address)
                 .post(requestBody);
@@ -79,8 +88,7 @@ public class OkHttpUtil {
 //                    Log.e("result_Success : ", result);
 //                    //start write
 //                }
-//            } catch (
-//                    IOException e) {
+//            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
 //        }).start();
