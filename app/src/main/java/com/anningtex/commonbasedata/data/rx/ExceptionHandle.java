@@ -1,12 +1,14 @@
 package com.anningtex.commonbasedata.data.rx;
 
 import android.net.ParseException;
+import android.util.Log;
 
 import com.google.gson.JsonParseException;
 
 import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONException;
 
+import java.io.FileNotFoundException;
 import java.net.ConnectException;
 
 import retrofit2.HttpException;
@@ -52,7 +54,10 @@ public class ExceptionHandle {
             return "连接超时";
         } else if (e instanceof java.net.SocketTimeoutException) {
             return "连接超时";
+        } else if (e instanceof FileNotFoundException) {
+            return "FileNotFoundException";
         } else {
+            Log.e("TAG~Log********", "handleException: " + e.toString());
             return "未知错误";
         }
     }

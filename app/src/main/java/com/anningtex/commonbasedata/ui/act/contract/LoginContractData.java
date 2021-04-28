@@ -38,7 +38,7 @@ public class LoginContractData implements LoginContract.LoginModel {
                     }
 
                     @Override
-                    public void onSuccess(LoginBean data) {
+                    public void onSuccess(String msg, LoginBean data) {
                         listener.moveToIndex(data);
                         Log.e("TAG", "onSuccess: " + data.getRole());
                     }

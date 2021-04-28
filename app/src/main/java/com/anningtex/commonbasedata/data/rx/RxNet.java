@@ -24,7 +24,7 @@ public class RxNet {
                 })
                 .subscribe(tBaseResponse -> {
                     if (tBaseResponse.getCode().equals("1")) {
-                        callBack.onSuccess(tBaseResponse.getData());
+                        callBack.onSuccess(tBaseResponse.getMsg(), tBaseResponse.getData());
                     } else {
                         callBack.onFailure(tBaseResponse.getMsg());
                     }
@@ -43,7 +43,7 @@ public class RxNet {
                 })
                 .subscribe(baseResponse -> {
                     if (baseResponse.getCode().equals("1")) {
-                        callBack.onSuccess(baseResponse.getMsg());
+                        callBack.onSuccess(baseResponse.getMsg(), baseResponse.getMsg());
                     } else {
                         callBack.onFailure(baseResponse.getMsg());
                     }

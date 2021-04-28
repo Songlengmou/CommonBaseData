@@ -9,7 +9,7 @@ public interface RxNetCallBack<T> {
     /**
      * 数据请求成功
      */
-    void onSuccess(T data);
+    void onSuccess(String msg, T data);
 
     /**
      * 数据请求失败

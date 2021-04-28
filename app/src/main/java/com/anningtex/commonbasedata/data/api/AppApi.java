@@ -1,6 +1,5 @@
 package com.anningtex.commonbasedata.data.api;
 
-
 import com.anningtex.commonbasedata.data.base.BaseResponse;
 import com.anningtex.commonbasedata.entity.RecentBean;
 import com.anningtex.commonbasedata.entity.LoginBean;
@@ -9,11 +8,15 @@ import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
+import retrofit2.http.PartMap;
 import retrofit2.http.QueryMap;
 
 /**
@@ -37,6 +40,16 @@ public interface AppApi {
     @FormUrlEncoded
     @POST("api/v1/getWarehouseDelivernoWithOrderList2")
     Observable<BaseResponse<List<RecentBean>>> getOneFrag(@Field("supplier_delivery_no") String date);
+
+    /**
+     * 上传File文件类型
+     */
+    @Multipart
+    @POST("api/v1/saveBarCode_Single")
+    Observable<BaseResponse<List>> getSaveBarCodeSingle(@Part("order_id") RequestBody olid,
+                                                        @Part("order_item_id") RequestBody flowerId,
+                                                        @Part("bar_code") RequestBody barCode,
+                                                        @PartMap Map<String, RequestBody> file);
 
     /**
      * 已废弃

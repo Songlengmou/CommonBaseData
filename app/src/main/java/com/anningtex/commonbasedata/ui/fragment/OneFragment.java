@@ -61,7 +61,7 @@ public class OneFragment extends BaseFragment {
             }
 
             @Override
-            public void onSuccess(List<RecentBean> data) {
+            public void onSuccess(String msg, List<RecentBean> data) {
                 hideLoading();
                 commonRefresh.finishRefresh();
                 Log.e("666OneFragment", "onSuccess: " + data.size());
