@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.anningtex.commonbasedata.data.base.BaseView;
-import com.anningtex.commonbasedata.data.rx.RxDisposeManager;
+import com.anningtex.commonbasedata.data.rx.rx.RxDisposeManager;
 import com.anningtex.commonbasedata.dialog.LoadingView;
 
 import butterknife.ButterKnife;
@@ -78,11 +78,13 @@ public abstract class BaseFragment extends Fragment implements BaseView {
 
     @Override
     public void showToast(String msg) {
-        new Thread(() -> {
-            Looper.prepare();
-            Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
-            Looper.loop();
-        }).start();
+        if (msg != null) {
+            new Thread(() -> {
+                Looper.prepare();
+                Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+                Looper.loop();
+            }).start();
+        }
     }
 
     public void $startActivity(Class<?> cls) {

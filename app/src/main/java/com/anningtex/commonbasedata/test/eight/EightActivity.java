@@ -13,11 +13,11 @@ import com.anningtex.commonbasedata.R;
 import com.anningtex.commonbasedata.data.api.ApiManager;
 import com.anningtex.commonbasedata.data.base.BaseResponse;
 import com.anningtex.commonbasedata.data.base.two.BaseActivity;
-import com.anningtex.commonbasedata.data.rx.FileRequestBodyProgress;
-import com.anningtex.commonbasedata.data.rx.RetrofitCallback;
-import com.anningtex.commonbasedata.data.rx.RxDisposeManager;
-import com.anningtex.commonbasedata.data.rx.RxNet;
-import com.anningtex.commonbasedata.data.rx.RxNetCallBack;
+import com.anningtex.commonbasedata.data.rx.rx.FileRequestBodyProgress;
+import com.anningtex.commonbasedata.data.rx.rx.RetrofitCallback;
+import com.anningtex.commonbasedata.data.rx.rx.RxDisposeManager;
+import com.anningtex.commonbasedata.data.rx.rx.RxNet;
+import com.anningtex.commonbasedata.data.rx.rx.RxNetCallBack;
 import com.anningtex.commonbasedata.databinding.ActivityEightBinding;
 
 import java.io.File;
@@ -73,9 +73,11 @@ public class EightActivity extends BaseActivity<ActivityEightBinding> {
         ContentResolver resolver = getContentResolver();
         if (requestCode == IMAGE_CODE) {
             try {
-                Uri originalUri = data.getData();
-                Bitmap bm = MediaStore.Images.Media.getBitmap(resolver, originalUri);
-                binding.ivPic.setImageBitmap(bm);
+                if (data != null) {
+                    Uri originalUri = data.getData();
+                    Bitmap bm = MediaStore.Images.Media.getBitmap(resolver, originalUri);
+                    binding.ivPic.setImageBitmap(bm);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

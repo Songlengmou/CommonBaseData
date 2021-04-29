@@ -1,4 +1,4 @@
-package com.anningtex.commonbasedata.data.rx;
+package com.anningtex.commonbasedata.data.rx.rx;
 
 /**
  * @author Song

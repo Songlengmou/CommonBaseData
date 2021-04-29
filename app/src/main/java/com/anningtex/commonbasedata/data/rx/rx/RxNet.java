@@ -1,4 +1,4 @@
-package com.anningtex.commonbasedata.data.rx;
+package com.anningtex.commonbasedata.data.rx.rx;
 
 import com.anningtex.commonbasedata.data.base.BaseResponse;
 import com.anningtex.commonbasedata.utils.AppLogUtils;
