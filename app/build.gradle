@@ -41,8 +41,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //LomBok
-    compileOnly 'org.projectlombok:lombok:1.16.20'
-    annotationProcessor "org.projectlombok:lombok:1.16.20"
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    //noinspection AnnotationProcessorOnCompilePath
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.2'
+    //noinspection AnnotationProcessorOnCompilePath
+    testCompileOnly 'org.projectlombok:lombok:1.18.2'
     //ButterKnife
     implementation 'com.jakewharton:butterknife:8.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
