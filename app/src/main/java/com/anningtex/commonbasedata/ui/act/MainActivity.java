@@ -1,5 +1,6 @@
 package com.anningtex.commonbasedata.ui.act;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.os.Bundle;
 
@@ -37,6 +38,7 @@ import static com.google.android.material.bottomnavigation.LabelVisibilityMode.L
 /**
  * @author Song
  */
+@SuppressLint("NonConstantResourceId")
 public class MainActivity extends BaseActivity {
     @BindView(R.id.main_bottom_nav)
     BottomNavigationView mMainBottomNav;
